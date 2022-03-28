@@ -6,15 +6,15 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 19:59:35 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/27 23:26:34 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/28 21:22:45 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __BUREAUCRAT_HPP__
 #define __BUREAUCRAT_HPP__
 
-#define G_MAX 150u
-#define G_MIN 1u
+#define G_MIN 150u
+#define G_MAX 1u
 
 #include <string>
 #include <iostream>
