@@ -6,13 +6,13 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:01:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/27 23:26:53 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/28 19:47:40 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): _name("John Doe"), _grade(1) {}
+Bureaucrat::Bureaucrat(): _name("John Doe"), _grade(G_MIN) {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &b): _name("John Doe"), _grade(1)
 {
@@ -22,17 +22,18 @@ Bureaucrat::Bureaucrat(const Bureaucrat &b): _name("John Doe"), _grade(1)
 Bureaucrat::Bureaucrat(const std::string &name, const int &grade)
 	: _name(name), _grade(grade) 
 {
-	if (_grade < G_MIN)
-		throw GradeTooLowException();
-	else if (_grade > G_MAX)
+	if (_grade < G_MAX)
 		throw GradeTooHighException();
+	else if (_grade > G_MIN)
+		throw GradeTooLowException();
 }
 
 Bureaucrat::~Bureaucrat() {}
 
 const Bureaucrat	&Bureaucrat::operator =(const Bureaucrat &b)
 {
-	
+	*(const_cast<std::string*>(&_name)) = b.getName();
+	_grade = b.getGrade();
 	return (*this);
 }
 
@@ -48,16 +49,16 @@ const std::string	&Bureaucrat::getName() const
 
 void	Bureaucrat::incGrade()
 {
-	if (_grade + 1 > G_MAX)
+	if (_grade - 1 < G_MAX)
 		throw GradeTooHighException();
-	_grade++;
+	_grade--;
 }
 
 void	Bureaucrat::decGrade()
 {
-	if (_grade - 1 < G_MAX)
+	if (_grade + 1 > G_MIN)
 		throw GradeTooLowException();
-	_grade--;
+	_grade++;
 }
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
@@ -72,5 +73,5 @@ const char	*Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream	&operator <<(std::ostream &o, const Bureaucrat &b)
 {
-	return (o << b.getName());
+	return (o << b.getName() << ", bureaucrat grade " << b.getGrade());
 }
