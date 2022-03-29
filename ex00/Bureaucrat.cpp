@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:01:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 00:43:47 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/29 20:36:50 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &b): _name("John Doe"), _grade(1)
 	*this = b;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, const int &grade)
+Bureaucrat::Bureaucrat(const std::string &name, const unsigned int &grade)
 	: _name(name), _grade(grade) 
 {
 	if (_grade < G_MAX)
@@ -63,12 +63,12 @@ void	Bureaucrat::decGrade()
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Bureaucrat grade too high";
+	return ("Bureaucrat grade too high");
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Bureaucrat grade too low";
+	return ("Bureaucrat grade too low");
 }
 
 std::ostream	&operator <<(std::ostream &o, const Bureaucrat &b)

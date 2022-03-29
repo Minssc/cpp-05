@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 19:59:35 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/28 21:56:47 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/29 20:37:16 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Bureaucrat
 	public:
 		Bureaucrat();
 		Bureaucrat(const Bureaucrat &b);
-		Bureaucrat(const std::string &name, const int &grade);
+		Bureaucrat(const std::string &name, const unsigned int &grade);
 		~Bureaucrat();
 
 		const Bureaucrat	&operator =(const Bureaucrat &b);

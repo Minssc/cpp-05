@@ -6,15 +6,15 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:23:22 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 02:20:14 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/29 20:50:00 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __FORM_HPP__
 #define __FORM_HPP__
 
-#define F_MAX_G 1
-#define F_MIN_G 150
+#define F_MAX_G 1u
+#define F_MIN_G 150u
 
 #include <string>
 #include "Bureaucrat.hpp"

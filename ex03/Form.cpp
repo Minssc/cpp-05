@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:23:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 15:13:03 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/29 20:51:37 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ const Form	&Form::operator =(const Form &f)
 
 const char	*Form::GradeTooHighException::what() const throw()
 {
-	return ("Form frade too High");
+	return ("Form grade too High");
 }
 
 const char	*Form::GradeTooLowException::what() const throw()
