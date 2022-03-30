@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:02:38 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 20:28:39 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/30 12:55:00 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
+	Bureaucrat b("minsunki", 150u);
+	
 	try
 	{
-		Bureaucrat b("minsunki", 150u);
 		std::cout << b << std::endl;
 		b.decGrade();
 		std::cout << b << std::endl;
@@ -51,6 +52,8 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	std::cout << b << std::endl;
 
 	return (0);
 }
