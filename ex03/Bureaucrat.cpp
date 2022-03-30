@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:01:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 12:28:26 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/30 12:59:32 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,12 @@ void	Bureaucrat::executeForm(Form const &form) const
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Bureaucrat Grade Too High");
+	return ("Bureaucrat grade too high");
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Bureaucrat Grade Too Low");
+	return ("Bureaucrat grade too low");
 }
 
 std::ostream	&operator <<(std::ostream &o, const Bureaucrat &b)

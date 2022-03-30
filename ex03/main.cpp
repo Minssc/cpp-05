@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:02:38 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 15:12:04 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/03/30 13:00:11 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int main()
 {
 	Form	*fp;
-	Intern someIntern;
+	Intern	someIntern;
 
 	fp = someIntern.makeForm("shrubbery creation", "home");
 	if (fp)
