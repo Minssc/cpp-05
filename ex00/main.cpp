@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:02:38 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/30 12:55:00 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 15:16:19 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,10 @@ int main()
 	}
 
 	std::cout << b << std::endl;
+
+	Bureaucrat c("test", 1u);
+	c = b;
+	std::cout << c << std::endl;
 
 	return (0);
 }

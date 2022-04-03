@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:01:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 20:36:50 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 15:53:53 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 Bureaucrat::Bureaucrat(): _name("John Doe"), _grade(G_MIN) {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat &b): _name("John Doe"), _grade(1)
-{
-	*this = b;
-}
+Bureaucrat::Bureaucrat(const Bureaucrat &b)
+	: _name(b.getName()), _grade(b.getGrade()) {}
 
 Bureaucrat::Bureaucrat(const std::string &name, const unsigned int &grade)
 	: _name(name), _grade(grade) 
@@ -32,7 +30,7 @@ Bureaucrat::~Bureaucrat() {}
 
 const Bureaucrat	&Bureaucrat::operator =(const Bureaucrat &b)
 {
-	*(const_cast<std::string*>(&_name)) = b.getName();
+	// *(const_cast<std::string*>(&_name)) = b.getName(); // UB!
 	_grade = b.getGrade();
 	return (*this);
 }

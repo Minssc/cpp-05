@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:23:22 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 20:50:00 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:21:38 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Form
 	public:
 		Form();
 		Form(const Form &f);
-		Form(const std::string &name);
+		// Form(const std::string &name);
 		Form(const std::string &name, const unsigned int &reqGrade,
 				const unsigned int &reqExec);
 		virtual	~Form();
@@ -66,9 +66,9 @@ class Form
 		virtual void	formAction() const = 0;
 		virtual const std::string	formType() const = 0;
 		
-		void	setName(const std::string &name);
+		// void	setName(const std::string &name);
 		void	setSigned(bool sign);
-		void	setGrades(const unsigned int &reqSign, const unsigned int &reqExec);
+		// void	setGrades(const unsigned int &reqSign, const unsigned int &reqExec);
 
 		const std::string	&getName() const;
 		const bool	&getSigned() const;

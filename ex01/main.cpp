@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 20:02:38 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/28 22:56:45 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:17:24 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main()
 	Form		f_moul("moulinette", 100u, 100u);
 	Form		f_norm("norminette", 150u, 150u);
 	Form		f_bonus("bonus", 50u, 50u);
+	Form		f;
 
 	std::cout << f_moul << std::endl;
 	std::cout << f_norm << std::endl;
@@ -34,6 +35,9 @@ int main()
 	std::cout << f_norm << std::endl;
 	std::cout << f_bonus << std::endl;
 
+	f_norm = f;
+
+	std::cout << f_norm << std::endl;
 
 
 	try

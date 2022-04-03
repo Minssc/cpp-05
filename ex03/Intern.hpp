@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:34:30 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 20:51:13 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:38:07 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ class Intern
 		const Intern	&operator =(const Intern &i);
 		
 		Form	*makeForm(const std::string &name, const std::string &target) const;
+		Form	*createSCF(const std::string &target) const;
+		Form	*createRRF(const std::string &target) const;
+		Form	*createPPF(const std::string &target) const;
+		Form	*what(const std::string &target) const;
 };
 
 

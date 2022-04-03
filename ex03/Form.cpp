@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:23:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 20:51:37 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:21:49 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,11 @@ Form::Form()
 {}
 
 Form::Form(const Form &f)
-	: _name("default"), _signed(false), _reqSign(F_MIN_G), _reqExec(F_MIN_G)
-{
-	*this = f;
-	if (_reqSign < F_MAX_G || _reqExec < F_MAX_G)
-		throw GradeTooHighException();
-	if (_reqSign > F_MIN_G || _reqExec > F_MIN_G)
-		throw GradeTooLowException();
-}
+	: _name(f.getName()), _signed(f.getSigned()), _reqSign(f.getReqSign()),
+		_reqExec(f.getReqExec()) {}
 
-Form::Form(const std::string &name)
-	: _name(name), _signed(false), _reqSign(F_MIN_G), _reqExec(F_MIN_G) {}
+// Form::Form(const std::string &name)
+// 	: _name(name), _signed(false), _reqSign(F_MIN_G), _reqExec(F_MIN_G) {}
 
 Form::Form(const std::string &name, const unsigned int &reqGrade,
 			const unsigned int &reqExec)
@@ -44,16 +38,16 @@ Form::~Form() {}
 
 const Form	&Form::operator =(const Form &f)
 {
-	*(const_cast<std::string*>(&_name)) = f.getName();
+	// *(const_cast<std::string*>(&_name)) = f.getName();
 	_signed = f.getSigned();
-	*(const_cast<unsigned int*>(&_reqSign)) = f.getReqSign();
-	*(const_cast<unsigned int*>(&_reqExec)) = f.getReqExec();
+	// *(const_cast<unsigned int*>(&_reqSign)) = f.getReqSign();
+	// *(const_cast<unsigned int*>(&_reqExec)) = f.getReqExec();
 	return (*this);
 }
 
 const char	*Form::GradeTooHighException::what() const throw()
 {
-	return ("Form grade too High");
+	return ("Form grade too high");
 }
 
 const char	*Form::GradeTooLowException::what() const throw()
@@ -87,26 +81,26 @@ void	Form::execute(Bureaucrat const &executor) const
 	this->formAction();
 }
 
-void	Form::setName(const std::string &name)
-{
-	*(const_cast<std::string*>(&_name)) = name;
-}
+// void	Form::setName(const std::string &name)
+// {
+// 	*(const_cast<std::string*>(&_name)) = name;
+// }
 
 void	Form::setSigned(bool sign)
 {
 	_signed = sign;
 }
 
-void	Form::setGrades(const unsigned int &reqSign, const unsigned int &reqExec)
-{
-	*(const_cast<unsigned int*>(&_reqSign)) = reqSign;
-	*(const_cast<unsigned int*>(&_reqExec)) = reqExec;
+// void	Form::setGrades(const unsigned int &reqSign, const unsigned int &reqExec)
+// {
+// 	*(const_cast<unsigned int*>(&_reqSign)) = reqSign;
+// 	*(const_cast<unsigned int*>(&_reqExec)) = reqExec;
 
-	if (_reqSign < F_MAX_G || _reqExec < F_MAX_G)
-		throw GradeTooHighException();
-	if (_reqSign > F_MIN_G || _reqExec > F_MIN_G)
-		throw GradeTooLowException();
-}
+// 	if (_reqSign < F_MAX_G || _reqExec < F_MAX_G)
+// 		throw GradeTooHighException();
+// 	if (_reqSign > F_MIN_G || _reqExec > F_MIN_G)
+// 		throw GradeTooLowException();
+// }
 
 const std::string	&Form::getName() const
 {

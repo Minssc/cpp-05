@@ -6,7 +6,7 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:23:22 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 20:49:33 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:01:03 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ class Form
 
 		const std::string	&getName() const;
 		const bool	&getSigned() const;
-		const unsigned int	&getReqGrade() const;
+		const unsigned int	&getReqSign() const;
 		const unsigned int	&getReqExec() const;
 };
 

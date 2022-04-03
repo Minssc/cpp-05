@@ -6,37 +6,30 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 00:08:19 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 12:26:11 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:24:15 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("home")
-{
-	setGrades(145, 137);
-}
+ShrubberyCreationForm::ShrubberyCreationForm()
+	: Form("home", 145, 137) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &name): Form(name)
-{
-	setGrades(145, 137);
-}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &name)
+	: Form(name, 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &s)
-	: Form()
-{
-	*this = s;
-}
+	: Form(s.getName(), s.getReqSign(), s.getReqExec()) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 const ShrubberyCreationForm	&ShrubberyCreationForm::operator 
 									=(const ShrubberyCreationForm &s)
 {
-	setName(s.getName());
+	// setName(s.getName());
 	setSigned(s.getSigned());
-	setGrades(s.getReqSign(), s.getReqExec());
+	// setGrades(s.getReqSign(), s.getReqExec());
 	return (*this);
 }
 

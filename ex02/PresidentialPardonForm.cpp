@@ -6,37 +6,29 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 01:28:44 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 02:19:57 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:23:14 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): Form("minsunki")
-{
-	setGrades(25, 5);
-}
+PresidentialPardonForm::PresidentialPardonForm()
+	: Form("John Doe", 25u, 5u) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
-	: Form(target)
-{
-	setGrades(25, 5);
-}
+	: Form(target, 25u, 5u) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &p)
-	: Form()
-{
-	*this = p;
-}
+	: Form(p.getName(), p.getReqSign(), p.getReqExec()) {}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
 const PresidentialPardonForm	&PresidentialPardonForm::operator
 									=(const PresidentialPardonForm &p)
 {
-	setName(p.getName());
+	// setName(p.getName());
 	setSigned(p.getSigned());
-	setGrades(p.getReqSign(), p.getReqExec());
+	// setGrades(p.getReqSign(), p.getReqExec());
 	return (*this);
 }
 

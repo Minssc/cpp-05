@@ -6,38 +6,30 @@
 /*   By: minsunki <minsunki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 01:06:17 by minsunki          #+#    #+#             */
-/*   Updated: 2022/03/29 02:20:47 by minsunki         ###   ########seoul.kr  */
+/*   Updated: 2022/04/03 16:23:41 by minsunki         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
 
-RobotomyRequestForm::RobotomyRequestForm(): Form("minsunki")
-{
-	setGrades(72, 45);
-}
+RobotomyRequestForm::RobotomyRequestForm()
+	: Form("minsunki", 72, 45) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-	: Form(target)
-{
-	setGrades(72, 45);
-}
+	: Form(target, 72, 45) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &r)
-	: Form()
-{
-	*this = r;
-}
+	: Form(r.getName(), r.getReqSign(), r.getReqExec()) {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
 const RobotomyRequestForm	&RobotomyRequestForm::operator
 								=(const RobotomyRequestForm &r)
 {
-	setName(r.getName());
+	// setName(r.getName());
 	setSigned(r.getSigned());
-	setGrades(r.getReqSign(), r.getReqExec());
+	// setGrades(r.getReqSign(), r.getReqExec());
 	return (*this);
 }
 
